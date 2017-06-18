@@ -11,6 +11,8 @@ public class PropertyDefn {
     @Version
     private long version;
 
+    private String name;
+
     private PropertyType propertyType;
 
     @OneToOne(fetch = FetchType.LAZY)
@@ -33,6 +35,14 @@ public class PropertyDefn {
 
     public void setVersion(long version) {
         this.version = version;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public PropertyType getPropertyType() {
