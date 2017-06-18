@@ -1,4 +1,8 @@
-package com.ftakas.dist.domain;
+package com.ftakas.dist.domain.property;
+
+import com.ftakas.dist.domain.DObject;
+import com.ftakas.dist.domain.PropertyType;
+import com.ftakas.dist.domain.PropertyVal;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -9,7 +13,7 @@ import java.util.List;
 public class DObjectPropertyVal extends PropertyVal {
     @ElementCollection(targetClass = com.ftakas.dist.domain.DObject.class)
     @OrderColumn(name = "POSITION")
-    private List<DObject> dObjectList;
+    private List<com.ftakas.dist.domain.DObject> dObjectList;
 
     @Override
     public PropertyType getPropertyType() {

@@ -1,4 +1,8 @@
-package com.ftakas.dist.domain;
+package com.ftakas.dist.domain.property;
+
+import com.ftakas.dist.domain.Clazz;
+import com.ftakas.dist.domain.PropertyType;
+import com.ftakas.dist.domain.PropertyVal;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
