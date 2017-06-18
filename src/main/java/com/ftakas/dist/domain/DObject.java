@@ -4,16 +4,13 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-public class Clazz {
+public class DObject {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
     @Version
     private long version;
-
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = PropertyDefn.class)
-    private Collection<PropertyDefn> propertyDefns;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = false,  mappedBy = "DObject")
     private Collection<PropertyVal> properties;
@@ -32,14 +29,6 @@ public class Clazz {
 
     public void setVersion(long version) {
         this.version = version;
-    }
-
-    public Collection<PropertyDefn> getPropertyDefns() {
-        return propertyDefns;
-    }
-
-    public void setPropertyDefns(Collection<PropertyDefn> propertyDefns) {
-        this.propertyDefns = propertyDefns;
     }
 
     public Collection<PropertyVal> getProperties() {

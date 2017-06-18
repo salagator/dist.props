@@ -1,21 +1,26 @@
 package com.ftakas.dist.domain;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.OrderColumn;
+import java.util.List;
 
 @Entity
 public class BooleanPropertyVal extends PropertyVal {
-    private Boolean[] booleanArray;
+    @ElementCollection(targetClass = Boolean.class)
+    @OrderColumn(name = "POSITION")
+    private List<Boolean> booleanList;
 
     @Override
     public PropertyType getPropertyType() {
         return PropertyType.Boolean;
     }
 
-    public Boolean[] getBooleanArray() {
-        return booleanArray;
+    public List<Boolean> getBooleanList() {
+        return booleanList;
     }
 
-    public void setBooleanArray(Boolean[] booleanArray) {
-        this.booleanArray = booleanArray;
+    public void setBooleanList(List<Boolean> booleanList) {
+        this.booleanList = booleanList;
     }
 }

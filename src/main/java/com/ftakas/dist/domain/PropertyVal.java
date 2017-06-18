@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class PropertyVal {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.TABLE)
     private long id;
 
     @Version
@@ -14,6 +14,9 @@ public abstract class PropertyVal {
 
     @ManyToOne(fetch = FetchType.EAGER)
     private PropertyDefn propertyDefn;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private DObject DObject;
 
     private boolean inConflict;
 

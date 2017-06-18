@@ -1,21 +1,26 @@
 package com.ftakas.dist.domain;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.OrderColumn;
+import java.util.List;
 
 @Entity
 public class IntegerPropertyVal extends PropertyVal {
-    private Long[] longArray;
+    @ElementCollection(targetClass = Long.class)
+    @OrderColumn(name = "POSITION")
+    private List<Long> longList;
 
     @Override
     public PropertyType getPropertyType() {
         return PropertyType.Integer;
     }
 
-    public void setLongArray(Long[] longArray) {
-        this.longArray = longArray;
+    public void setLongList(List<Long> longList) {
+        this.longList = longList;
     }
 
-    public Long[] getLongArray() {
-        return longArray;
+    public List<Long> getLongList() {
+        return longList;
     }
 }

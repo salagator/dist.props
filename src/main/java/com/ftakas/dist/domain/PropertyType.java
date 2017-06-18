@@ -4,5 +4,8 @@ public enum PropertyType {
     String,
     Integer,
     FloatingPoint,
-    Boolean;
+    Boolean,
+    DObject,
+    PropertyDefn,
+    Clazz;
 }
